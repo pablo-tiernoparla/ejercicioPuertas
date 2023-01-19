@@ -34,7 +34,7 @@ public class Conserje extends Persona{
     public void cerrar(Puerta puerta) {
         for (int i = 0; i < llave.length; i++) {
             this.llave[i].cerrarPuerta(puerta);
-            if (puerta.isAbierto() == true){
+            if (puerta.isAbierto() == false){
                 break;
             }
         }
