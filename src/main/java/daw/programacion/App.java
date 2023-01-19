@@ -10,6 +10,7 @@ public class App
         Llave llave1 = new Llave(1, true);
         Llave llave2 = new Llave(2, false);
         Conserje conserje1 = new Conserje("Raul", new Llave[]{llave1, llave2});
+        Ladron ladron1 = new Ladron("Juan",true, true);
 
         conserje1.abrir(puerta1);
         conserje1.abrir(puerta2);
