@@ -1,21 +1,12 @@
 package daw.programacion;
 
-public class Conserje {
+public class Conserje extends Persona{
 
-    private String nombre;
     private Llave[] llave;
 
     public Conserje(String nombre, Llave[] llave) {
-        this.nombre = nombre;
+        super(nombre);
         this.llave = llave;
-    }
-
-    public String getNombre() {
-        return this.nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public Llave getLlave(int num) {
@@ -28,7 +19,7 @@ public class Conserje {
 
     @Override
     public String toString() {
-        return "Conserje [nombre=" + this.nombre + ", llave=" + this.llave + "]";
+        return "Conserje [llave=" + this.llave + "]";
     }
 
     public void abrir(Puerta puerta) {
