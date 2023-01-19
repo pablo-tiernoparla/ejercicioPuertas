@@ -27,9 +27,10 @@ public class Llave {
         if (puerta.isAbierto() == false) {
             if (this.numero == puerta.getNumero() || this.maestra == true) {
                 System.out.println("Se abre la cerradura");
+                puerta.setAbierto(true);
                 return true;
             }
-            System.out.println("No se puede abrir la puerta");
+            System.out.println("No se puede abrir con esta llave");
             return false;
         }
         System.out.println("La puerta esta abierta ya");
@@ -40,10 +41,10 @@ public class Llave {
         if (puerta.isAbierto() == true){
             if (this.numero == puerta.getNumero() || this.maestra == true) {
                 puerta.setAbierto(false);
-                System.out.println("Se cierra la puerta");
+                System.out.println("Se cierra la cerradura");
                 return false;
             }
-            System.out.println("No se puede cerrar la puerta");
+            System.out.println("No se puede cerrar con esta llave");
             return true;
         }
         System.out.println("La puerta esta cerrada ya");

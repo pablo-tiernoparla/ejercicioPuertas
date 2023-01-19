@@ -5,7 +5,7 @@ public class Conserje {
     private String nombre;
     private Llave[] llave;
 
-    public Conserje(String nombre, Llave[] llave){
+    public Conserje(String nombre, Llave[] llave) {
         this.nombre = nombre;
         this.llave = llave;
     }
@@ -18,24 +18,34 @@ public class Conserje {
         this.nombre = nombre;
     }
 
-    public Llave getLlave() {
-        return this.llave[0];
+    public Llave getLlave(int num) {
+        return this.llave[num];
     }
 
-    public void setLlave(Llave llave) {
-        this.llave[0] = llave;
+    public void setLlave(Llave llave, int num) {
+        this.llave[num] = llave;
     }
 
     @Override
     public String toString() {
         return "Conserje [nombre=" + this.nombre + ", llave=" + this.llave + "]";
     }
-    
-    public void abrir(Puerta puerta){
-        this.llave[0].abrirPuerta(puerta);
+
+    public void abrir(Puerta puerta) {
+        for (int i = 0; i < llave.length; i++) {
+            this.llave[i].abrirPuerta(puerta);
+            if (puerta.isAbierto() == true){
+                break;
+            }
+        }
     }
 
-    public void cerrar(Puerta puerta){
-        this.llave[0].cerrarPuerta(puerta);        
+    public void cerrar(Puerta puerta) {
+        for (int i = 0; i < llave.length; i++) {
+            this.llave[i].cerrarPuerta(puerta);
+            if (puerta.isAbierto() == true){
+                break;
+            }
+        }
     }
 }
